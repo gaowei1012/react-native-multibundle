@@ -10,6 +10,7 @@ import { HomeRouteName, HomeScreenProps } from './types';
 import { ScreenHeight, ScreenWidth } from '@src/utils/constant';
 import {
   openComponent,
+  openComponentForBundle,
   getAllComponent,
   checkUpdate,
   onEvent,
@@ -42,6 +43,9 @@ const Home: React.FC<HomeScreenProps<HomeRouteName.Home>> = props => {
       ToastAndroid.show('更新成功', 3000);
     });
   }, []);
+  const openBundle1 = useCallback(() => {
+    openComponentForBundle('asstes://buz1.ios.bundle', 'gfwmappzj', {});
+  }, []);
   return (
     <ScrollView
       style={styles.container}
@@ -73,6 +77,7 @@ const Home: React.FC<HomeScreenProps<HomeRouteName.Home>> = props => {
                 label={'JUMP'}
               />
             )}
+            <Button onPress={openBundle1}>test1</Button>
           </Card>
         );
       })}
