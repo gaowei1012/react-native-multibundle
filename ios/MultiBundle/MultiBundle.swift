@@ -43,7 +43,7 @@ public class MultiBundle: RCTEventEmitter {
     if isDev {
       commonBundleUrl = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackResource: nil)
     } else {
-      commonBundleUrl = Bundle.main.url(forResource: "bundle/common.ios", withExtension: "bundle")!
+      commonBundleUrl = Bundle.main.url(forResource: "bundle/buz1.ios", withExtension: "bundle")!
     }
     
     let rctBridge = RCTBridge.init(bundleURL: commonBundleUrl, moduleProvider: nil, launchOptions: launchOptions)
@@ -145,6 +145,14 @@ public class MultiBundle: RCTEventEmitter {
     let params: Dictionary<String, Any> = ["goBack": true]
     DispatchQueue.main.async {
       let controller: UIViewController = RNController(moduleName: moduleName, params: params)
+      UIApplication.topNavigationController()?.pushViewController(controller, animated: true)
+    }
+  }
+
+  @objc(openComponentForBundle:moduleName:params:)
+   public func openComponentForBundle(_ bundlePath: String, moduleName moduleName: String, params params: Dictionary<String, Any>) -> Void {
+    DispatchQueue.main.async {
+      let controller: UIViewController = RNBundleController(bundlePath: bundlePath, moduleName: moduleName, params: params)
       UIApplication.topNavigationController()?.pushViewController(controller, animated: true)
     }
   }

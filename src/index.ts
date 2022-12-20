@@ -81,6 +81,16 @@ export function openComponent(
   }
 }
 
+export function openComponentForBundle(
+  bundlePath: string,
+  moduleName: string,
+  params?: Record<string, any>
+) {
+  if (IsIOS) {
+    MultiBundle?.openComponentForBundle(bundlePath, moduleName, params ?? {});
+  }
+}
+
 /**
  * 获取本机所有模块
  * @returns
