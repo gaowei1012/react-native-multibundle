@@ -10,7 +10,8 @@
     "bundle-android": "rn-multi-bundle -c bundleSplit.conf.js",
     "build-android": "./android/gradlew assembleDebug -x bundleDebugJsAndAssets",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "bundle:ios": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/bundle/base.ios.bundle --assets-dest ./ios/bundle"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.3.1",

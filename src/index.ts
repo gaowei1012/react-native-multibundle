@@ -87,7 +87,7 @@ export function openComponentForBundle(
   params?: Record<string, any>
 ) {
   if (IsIOS) {
-    MultiBundle?.openComponent(bundlePath, moduleName, params ?? null);
+    MultiBundle?.openComponentForBundle(bundlePath, moduleName);
   }
 }
 
