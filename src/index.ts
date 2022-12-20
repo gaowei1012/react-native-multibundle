@@ -154,10 +154,10 @@ class SmartAssetsImpl {
   private static externalFilesDir: string | null = null;
 
   init() {
-    getExternalFilesDir().then(
-      (externalFilesDir) =>
-        (SmartAssetsImpl.externalFilesDir = externalFilesDir)
-    );
+    // getExternalFilesDir().then(
+    //   (externalFilesDir) =>
+    //     (SmartAssetsImpl.externalFilesDir = externalFilesDir)
+    // );
     setCustomSourceTransformer((resolver: any) => {
       if (resolver.isLoadedFromServer()) {
         return resolver.assetServerURL();
