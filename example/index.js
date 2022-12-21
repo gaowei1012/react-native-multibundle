@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import { openComponentForBundle } from 'react-native-multibundle';
+import { openComponentForBundle } from '@utils/native';
 
 const Demo = () => {
   return (
