@@ -55,7 +55,7 @@ class RNBundleLoader: NSObject {
   }
   
   static func load(_ BundleName: String) {
-    if MultiBundle.IS_DEV { return }
+    // if MultiBundle.IS_DEV { return }
     var filePath = BundleName
     let startIndex = filePath.startIndex
     if BundleName.starts(with: "assets://") {

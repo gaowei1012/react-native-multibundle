@@ -12,7 +12,7 @@ const Demo = () => {
     <SafeAreaView>
       <TouchableOpacity
         onPress={() => {
-          openComponentForBundle('assets://base.ios.bundle', 'example');
+          openComponentForBundle('assets://buz1.ios.bundle', 'gfwmappzj');
         }}>
         <Text>打开子包</Text>
       </TouchableOpacity>
